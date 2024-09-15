@@ -1,0 +1,7 @@
+{
+  "name": "tp-one-onMenu",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

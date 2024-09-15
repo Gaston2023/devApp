@@ -1,0 +1,76 @@
+
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card-content>
+</ion-card-content>
+<div class="profile-container">
+  <!-- Imagen de perfil -->
+  <img src="../assets/persona2.png" alt="Perfil" class="profile-image">
+  <ion-title size="large">GASTÓN MONZÓN</ion-title>
+</div>
+
+
+<ion-content padding class="content-container">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="6">
+        <div class="form-container">
+          <!-- Imagen de perfil -->
+          <div class="profile-picture-container ion-text-center">
+            <input type="file" (change)="onFileChange($event)" id="file-input" hidden>
+            <label for="file-input">
+              <ion-img *ngIf="profilePic" [src]="profilePic" class="profile-pic"></ion-img>
+              <ion-button shape="round" fill="outline" class="upload-btn">Subir Foto</ion-button>
+            </label>
+          </div>
+
+          <!-- Campos de formulario -->
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input [(ngModel)]="name"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Apellido</ion-label>
+            <ion-input [(ngModel)]="surname"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Correo electrónico</ion-label>
+            <ion-input [(ngModel)]="email"></ion-input>
+          </ion-item>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="6">
+        <ion-item>
+          <ion-label>Foto</ion-label>
+          <input type="file" (change)="onFileChange($event)">
+          <ion-img *ngIf="profilePic" [src]="profilePic"></ion-img>
+        </ion-item>
+        <ion-row class="ion-justify-content-center">
+          <ion-button size="default" shape="round" (click)="saveProfile()">Guardar</ion-button>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer class="ion-text-center">
+  <ion-toolbar class="footer-toolbar">
+    <p class="footer-text">
+      Derechos reservados Trigo Monzón C. Gastón 2024 - PWA para Desarrollo Móvil
+    </p>
+  </ion-toolbar>
+</ion-footer>
